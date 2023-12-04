@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">index</a>
+      <a href="java.html" class="w3-bar-item w3-button">java</a>
+      <a href="api.html" class="w3-bar-item w3-button">api</a>
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="navbar">
+  <div class="navbar-logo">
+    <a href="index.html"><i class="fas fa-home"></i></a>
+  </div>
+  <!-- Right-sided navbar links -->
+  <div class="navbar-links">
+    <a href="#about"><i class="fas fa-info-circle"></i> ABOUT</a>
+    <a href="java.html"><i class="fas fa-users"></i> JAVA</a>
+    <a href="api.html"><i class="fas fa-briefcase"></i> API</a>
+    <a href="#photos.html"><i class="fas fa-image"></i> PHOTOS</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> CONTACT</a>
+  </div>
+</div>
+<div class="card">
+    <div class="content">
+        <h1>API</h1>
+
+        <hr>
+        <h2>Click to change</h2>
+        <p id="demo2">Hi</p>
+        <button onclick="myFunction()">Click me</button>
+        
+        <!-- End page content -->
+        </div>
+
+        
+        <script>
+          //document.getElementById("demo").innerHTML = "Hello World";
+        
+        
+          function myFunction() {
+            fetch("https://catfact.ninja/fact")
+              .then(function(response){
+                return response.json()
+              })
+              .then(function(data){
+                let txt = "";
+                  for (let x in data) {
+                    txt += data[x] + " ";
+                  document.getElementById("demo2").innerHTML = txt;
+                  };
+              
+                return data;
+              })  
+              
+         
+        }
+        
+        
+        </script>
+
+</body>
+</html>
